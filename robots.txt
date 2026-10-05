@@ -1,0 +1,5 @@
+# Allow all crawlers, including search and AI search bots
+User-agent: *
+Allow: /
+
+Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
