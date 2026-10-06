@@ -6,13 +6,14 @@
   --bg: #0B0A19;          /* base */
   --surface: #161426;     /* contrast card */
   --text: #F8F9FA;        /* text */
-  --accent: #7F56D9;      /* CTAs + key metrics only */
-  --accent-press: #6A43C7;
+  --accent: #4C9CD1;      /* key metrics (result-card numbers) */
+  --cta: #004AB2;         /* CTA buttons */
+  --cta-press: #003A8C;
   --muted: #A9A7BC;
   --line: rgba(248, 249, 250, 0.12);
   --line-strong: rgba(248, 249, 250, 0.28);
   --ghost: rgba(248, 249, 250, 0.05);
-  --focus: #B69CF2;
+  --focus: #8CC3E8;
 
   --font-display: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
@@ -123,8 +124,8 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
 }
 .btn:active { transform: scale(0.97); }
 
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-press); }
+.btn-primary { background: var(--cta); color: #fff; }
+.btn-primary:hover { background: var(--cta-press); }
 
 .btn-ghost { border-color: var(--line-strong); color: var(--text); }
 .btn-ghost:hover { border-color: var(--text); }
@@ -218,10 +219,12 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
 .hero {
   position: relative;
   padding-top: calc(var(--header-h) + clamp(32px, 6vw, 72px));
-  padding-bottom: clamp(24px, 3vw, 48px);
+  padding-bottom: 0;
   overflow: hidden;
   isolation: isolate;
 }
+/* tighter gap between the "seo growth" words and the Results section */
+.hero + .section { padding-top: clamp(40px, 5vw, 72px); }
 
 .hero-grid {
   position: relative;
@@ -241,7 +244,7 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
 .portrait { position: relative; }
 .portrait img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: var(--radius);
   background: var(--surface);
@@ -538,7 +541,8 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
 .project-group-title { color: var(--text); margin-bottom: 16px; }
 .projects { border-top: 1px solid var(--line-strong); }
 .project { border-bottom: 1px solid var(--line); }
-.project > a {
+.project > a,
+.project > .project-inner {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
   grid-template-areas: "head desc" "head tags";
@@ -736,6 +740,6 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
   .contact-links a { border-bottom: 1px solid var(--line); }
   .toolkit-groups { grid-template-columns: 1fr; }
   .certs a { flex-direction: column; gap: 4px; }
-  .project > a { grid-template-columns: 1fr; grid-template-areas: "head" "desc" "tags"; }
+  .project > a, .project > .project-inner { grid-template-columns: 1fr; grid-template-areas: "head" "desc" "tags"; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 4px; }
 }
