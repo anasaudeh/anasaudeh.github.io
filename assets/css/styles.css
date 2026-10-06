@@ -425,7 +425,8 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
   transition: border-color var(--dur) var(--ease-out);
 }
 .card:hover { border-color: var(--line-strong); }
-.card-tag { font-size: 0.6875rem; }
+/* tag reserves two lines so every big number starts at the same height */
+.card-tag { font-size: 0.6875rem; min-height: 3em; }
 .card-metric {
   font-family: var(--font-display);
   font-weight: 600;
@@ -433,8 +434,7 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
   line-height: 1;
   letter-spacing: -0.045em;
   color: var(--accent);
-  margin-top: auto;
-  padding-top: 24px;
+  padding-top: 16px;
   font-variant-numeric: tabular-nums;
 }
 .card-metric small { font-size: 0.4em; letter-spacing: -0.01em; color: var(--muted); }
