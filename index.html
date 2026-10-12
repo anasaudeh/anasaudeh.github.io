@@ -4,16 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX4HTK25QJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-PX4HTK25QJ');
-  </script>
-
   <!-- Meta title: 52 chars · Meta description: 152 chars -->
   <title>Anas Audeh | SEO Manager for iGaming &amp; Affiliate SEO</title>
   <meta name="description" content="Specialised in technical SEO, on-page optimisation, link building, brand protection and affiliate growth, driving high-value FTDs.">
@@ -493,5 +483,39 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+  <script>
+(function () {
+  var loaded = false;
+
+  function loadGA4() {
+    if (loaded) return;
+    loaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () {
+      dataLayer.push(arguments);
+    };
+
+    gtag('js', new Date());
+    gtag('config', 'G-PX4HTK25QJ');
+
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-PX4HTK25QJ';
+    document.head.appendChild(script);
+
+    ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (event) {
+      window.removeEventListener(event, loadGA4);
+    });
+  }
+
+  ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (event) {
+    window.addEventListener(event, loadGA4, {
+      once: true,
+      passive: true
+    });
+  });
+})();
+</script>
 </body>
 </html>
